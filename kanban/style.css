@@ -1,7 +1,7 @@
 body {
   font-family: Arial;
-  margin: 10px;
-  padding: 12px;
+  margin: 0;
+  padding: 20px;
   background: #f4f4f4;
 }
 
@@ -11,16 +11,15 @@ h1 {
 
 .board {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
-  padding: 20px;
-  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .column {
   background: white;
   padding: 10px;
-  width: 600px;
+  width: 300px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -39,7 +38,7 @@ button {
 }
 
 .card-container {
-  min-height: 300px;
+  min-height: 200px;
   padding: 10px;
   border: 2px dashed #ccc;
 }

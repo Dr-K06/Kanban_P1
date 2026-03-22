@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const novoTexto = prompt("Editar tarefa:", card.textContent);
       if (novoTexto) {
         card.textContent = novoTexto;
-        saveData(); // salva após editar
+        saveData(); //  salva após editar
       }
     });
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(draggedCard);
         draggedCard = null;
 
-        saveData(); //  salva após mover
+        saveData(); // salva após mover
       }
     });
 
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //  carregar ao abrir a página
   loadData();
 
-  //  Botões
+  // Botões
   document.getElementById("btn-todo")
     .addEventListener("click", () => addCard("todo"));
 

@@ -11,24 +11,23 @@
 
 <div class="board">
 
-    <div>
-        <button onclick="addCard('todo')">Adicionar Tarefa</button>
-    </div>
+  <div class="column" id="todo">
+    <h2>A Fazer</h2>
+    <button id="btn-todo">+ Adicionar</button>
+    <div class="card-container"></div>
+  </div>
 
-    <div class="column" id="todo">
-        <h2>A FAZER</h2>
-        <div class="card-container"></div>
-    </div>
+  <div class="column" id="in-progress">
+    <h2>Fazendo</h2>
+    <button id="btn-doing">+ Adicionar</button>
+    <div class="card-container"></div>
+  </div>
 
-    <div class="column" id="in-progress">
-        <h2>EM ANDAMENTO</h2>
-        <div class="card-container"></div>
-    </div>
-
-    <div class="column" id="done">
-        <h2>CONCLUÍDO</h2>
-        <div class="card-container"></div>
-    </div>
+  <div class="column" id="done">
+    <h2>Concluído</h2>
+    <button id="btn-done">+ Adicionar</button>
+    <div class="card-container"></div>
+  </div>
 
 </div>
 
