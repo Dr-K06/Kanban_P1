@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Quadro Kanban</h1>
+
+<div class="board">
+
+    <div>
+        <button onclick="addCard('todo')">Adicionar Tarefa</button>
+    </div>
+
+    <div class="column" id="todo">
+        <h2>A FAZER</h2>
+        <div class="card-container"></div>
+    </div>
+
+    <div class="column" id="in-progress">
+        <h2>EM ANDAMENTO</h2>
+        <div class="card-container"></div>
+    </div>
+
+    <div class="column" id="done">
+        <h2>CONCLUÍDO</h2>
+        <div class="card-container"></div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
