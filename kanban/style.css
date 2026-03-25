@@ -55,42 +55,31 @@ button {
 /* Responsivo */
 /* --- Estilos mobile --- */
 @media (max-width: 768px) {
-  
+  /* 1. Faz as colunas do board ficarem uma embaixo da outra */
   .board {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    
-    /* Melhora o aspecto geral */
-    padding: 20px; 
-    gap: 20px; 
-    background-color: #f4f5f7; /
-          }
-
-  /* 2. As Colunas Individuais */
-  .column {
-    width: 100%; /* Ocupa a largura total disponível */
-    max-width: 400px; /* Impede que fique largo demais em tablets */
-    
-    /* Design Moderno e Clean */
-    background-color: #ebecf0; /* Cor de fundo da coluna */
-    border-radius: 8px; /* Cantos arredondados suaves */
-    padding: 15px; /* Espaço interno para o conteúdo */
-    
-    /* Sombra suave para dar profundidade e destaque */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    
-    /* Centraliza os cartões dentro da coluna */
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  /* 3. Títulos das Colunas  */
-  .column h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    color: #172b4d;
-    font-size: 1.2rem;
+  /* 2. Ajusta a largura das colunas para preencher a tela do celular */
+  .column {
+    width: 90%; /* Deixa uma pequena margem nas laterais */
+    max-width: none; 
+    margin-bottom: 20px;
+  }
+
+  /* 3. O PONTO CHAVE: Garante que os cards empilhem verticalmente */
+  .card-container {
+    display: flex;
+    flex-direction: column; /* Força um card abaixo do outro */
+    gap: 10px; /* Espaçamento uniforme entre os cards */
+    min-height: 100px; /* Reduz um pouco o tamanho mínimo no mobile */
+  }
+
+  /* 4. Ajusta os cards para ocuparem a largura total da coluna */
+  .card {
+    width: 100%; 
+    box-sizing: border-box; /* Garante que o padding não "estoure" a largura */
+    margin: 0; /* O gap do container já resolve o espaçamento */
   }
 }
