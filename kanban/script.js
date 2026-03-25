@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //  carregar ao abrir a página
   loadData();
 
-  // Botões
+  // Botões para adicionar cartões
   document.getElementById("btn-todo")
     .addEventListener("click", () => addCard("todo"));
 

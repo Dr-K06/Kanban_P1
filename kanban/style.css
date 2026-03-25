@@ -27,7 +27,7 @@ h1 {
 }
 
 /* Cores */
-#todo { background-color: #ffeaa7; }
+#todo { background-color: #fa8585; }
 #in-progress { background-color: #81ecec; }
 #done { background-color: #55efc4; }
 
@@ -53,9 +53,44 @@ button {
 }
 
 /* Responsivo */
+/* --- Estilos mobile --- */
 @media (max-width: 768px) {
+  
   .board {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    
+    /* Melhora o aspecto geral */
+    padding: 20px; 
+    gap: 20px; 
+    background-color: #f4f5f7; /
+          }
+
+  /* 2. As Colunas Individuais */
+  .column {
+    width: 100%; /* Ocupa a largura total disponível */
+    max-width: 400px; /* Impede que fique largo demais em tablets */
+    
+    /* Design Moderno e Clean */
+    background-color: #ebecf0; /* Cor de fundo da coluna */
+    border-radius: 8px; /* Cantos arredondados suaves */
+    padding: 15px; /* Espaço interno para o conteúdo */
+    
+    /* Sombra suave para dar profundidade e destaque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    
+    /* Centraliza os cartões dentro da coluna */
+    display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  /* 3. Títulos das Colunas  */
+  .column h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #172b4d;
+    font-size: 1.2rem;
   }
 }
