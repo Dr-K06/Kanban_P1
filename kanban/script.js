@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       saveData(); // salva após remover
     });
 
-    // Evento de arrastar
+    // Evento de arrastar 
     card.addEventListener("dragstart", () => {
       draggedCard = card;
     });
