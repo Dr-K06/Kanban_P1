@@ -10,34 +10,51 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = createCard(text);
     document.querySelector(`#${columnId} .card-container`).appendChild(card);
 
-    saveData(); //  salva após criar
+    saveData(); // salva após criar
   }
 
-  // 🔹 Criar elemento do cartão
+  // 🔹 Criar elemento do cartão (ATUALIZADO COM BOTÃO ❌)
   function createCard(text) {
     const card = document.createElement("div");
     card.className = "card";
     card.draggable = true;
-    card.textContent = text;
 
-    // Arrastar
+    // Texto do card
+    const span = document.createElement("span");
+    span.textContent = text;
+
+    // Botão de remover
+    const btnRemove = document.createElement("button");
+    btnRemove.textContent = "❌";
+    btnRemove.className = "remove-btn";
+
+    btnRemove.addEventListener("click", () => {
+      card.remove();
+      saveData(); // salva após remover
+    });
+
+    // Evento de arrastar
     card.addEventListener("dragstart", () => {
       draggedCard = card;
     });
 
-    // Editar
+    // Evento de editar (duplo clique)
     card.addEventListener("dblclick", () => {
-      const novoTexto = prompt("Editar tarefa:", card.textContent);
+      const novoTexto = prompt("Editar tarefa:", span.textContent);
       if (novoTexto) {
-        card.textContent = novoTexto;
-        saveData(); //  salva após editar
+        span.textContent = novoTexto;
+        saveData(); // salva após editar
       }
     });
+
+    // Montar o card
+    card.appendChild(span);
+    card.appendChild(btnRemove);
 
     return card;
   }
 
-  //  Permitir soltar
+  // 🔹 Permitir soltar os cards
   document.querySelectorAll(".card-container").forEach(container => {
 
     container.addEventListener("dragover", (e) => {
@@ -55,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  //  SALVAR DADOS
+  // 🔹 SALVAR DADOS
   function saveData() {
     const data = {};
 
@@ -64,7 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const cards = [];
 
       column.querySelectorAll(".card").forEach(card => {
-        cards.push(card.textContent);
+        const text = card.querySelector("span").textContent;
+        cards.push(text);
       });
 
       data[columnId] = cards;
@@ -73,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("kanban", JSON.stringify(data));
   }
 
-  //  CARREGAR DADOS
+  // 🔹 CARREGAR DADOS
   function loadData() {
     const data = JSON.parse(localStorage.getItem("kanban"));
     if (!data) return;
@@ -88,10 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  //  carregar ao abrir a página
+  // 🔹 Carregar ao abrir
   loadData();
 
-  // Botões para adicionar cartões
+  // 🔹 Botões
   document.getElementById("btn-todo")
     .addEventListener("click", () => addCard("todo"));
 

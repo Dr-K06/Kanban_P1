@@ -51,6 +51,21 @@ button {
   border-radius: 5px;
   cursor: grab;
 }
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.remove-btn {
+  background: rgb(162, 0, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
 
 /* Responsivo */
 /* --- Estilos mobile --- */
